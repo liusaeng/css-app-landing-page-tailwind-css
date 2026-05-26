@@ -1,8 +1,7 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Acme App</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -211,6 +210,112 @@
             </article>
           </li>
         </ul>
+      </div>
+    </section>
+    <section id="contact-section" class="w-full bg-[#F6F6FB] px-6 py-16">
+      <div
+        class="mx-auto max-w-[900px] rounded-3xl bg-white px-6 py-12 sm:px-12"
+      >
+        <h2 class="mb-10 text-center text-5xl font-bold text-[#1A1A2C]">
+          Get in Touch
+        </h2>
+
+        <form class="mx-auto max-w-[589px] space-y-5">
+          <div>
+            <label for="contact-name" class="mb-2 block text-sm text-gray-500">
+              Name
+            </label>
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              placeholder="John Doe"
+              class="w-full rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+            />
+          </div>
+
+          <div>
+            <label for="contact-email" class="mb-2 block text-sm text-gray-500">
+              Email
+            </label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              placeholder="john@example.com"
+              class="w-full rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+            />
+          </div>
+
+          <div>
+            <label
+              for="contact-message"
+              class="mb-2 block text-sm text-gray-500"
+            >
+              Message
+            </label>
+            <textarea
+              id="contact-message"
+              name="message"
+              rows="5"
+              placeholder="Your message..."
+              class="w-full resize-none rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full max-w-[589px] rounded-2xl bg-[#1A1A2C] px-9 py-4 text-white transition hover:bg-[#5F5F76] focus:bg-[#35354D] focus:outline-none focus:ring-4 focus:ring-[#5F5F76]"
+          >
+            Submit
+          </button>
+        </form>
+
+        <footer
+          id="footer-section"
+          class="mt-16 flex flex-col items-center justify-between gap-6 text-sm sm:flex-row"
+        >
+          <p class="text-gray-500">Acme productivity app © 2024</p>
+
+          <nav aria-label="Footer Navigation">
+            <ul
+              class="flex flex-wrap justify-center gap-6 font-semibold text-[#1A1A2C]"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="transition hover:text-[#5E44FF] hover:underline"
+                >
+                  FAQ
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition hover:text-[#5E44FF] hover:underline"
+                >
+                  Terms
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition hover:text-[#5E44FF] hover:underline"
+                >
+                  AI Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="transition hover:text-[#5E44FF] hover:underline"
+                >
+                  Pricing
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </footer>
       </div>
     </section>
     </main>
