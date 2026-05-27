@@ -38,10 +38,12 @@
     </script>
   </head>
   <body class="min-h-screen bg-[#F6F6FB] font-sans antialiased">
-    <main class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-16 pt-8">
-      <header class="mb-20">
+    <main
+      class="mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-16 pt-6 sm:px-6 sm:pt-8"
+    >
+      <header class="mb-12 md:mb-16 lg:mb-20">
         <nav
-          class="flex items-center justify-between rounded-full bg-brand-surface px-8 py-4 shadow-[0_4px_24px_rgba(15,23,42,0.06)]"
+          class="flex items-center justify-between rounded-full bg-brand-surface px-6 py-4 shadow-[0_4px_24px_rgba(15,23,42,0.07)] md:px-8"
           aria-label="Main navigation"
         >
           <a
@@ -55,7 +57,9 @@
             ></span>
           </a>
 
-          <ul class="flex items-center gap-10 text-base font-medium">
+          <ul
+            class="hidden items-center gap-10 text-base font-medium lg:flex"
+          >
             <li>
               <a
                 href="#"
@@ -87,15 +91,68 @@
               >
             </li>
           </ul>
+
+          <button
+            type="button"
+            id="menu-toggle"
+            class="inline-flex items-center justify-center rounded-lg p-1 text-brand-heading transition-colors hover:text-[#5E44FF] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 lg:hidden"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Toggle navigation menu"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
         </nav>
+
+        <div
+          id="mobile-menu"
+          class="mt-4 hidden rounded-3xl bg-brand-surface px-6 py-10 shadow-[0_4px_24px_rgba(15,23,42,0.06)] lg:hidden"
+        >
+          <ul class="flex flex-col items-center gap-8 text-lg font-medium">
+            <li>
+              <a
+                href="#"
+                class="border-b-2 border-brand-primary pb-0.5 text-brand-primary"
+                aria-current="page"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-brand-heading hover:text-[#5E44FF]"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-brand-heading hover:text-[#5E44FF]"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-brand-heading hover:text-[#5E44FF]"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
       </header>
 
       <section
-        class="flex flex-1 flex-col items-center text-center"
+        class="flex flex-1 flex-col items-center px-2 text-center md:px-4"
         aria-labelledby="hero-heading"
       >
         <p
-          class="mb-8 inline-flex items-center gap-2 rounded-full bg-brand-primary-soft px-4 py-1.5 text-sm font-medium text-brand-primary"
+          class="mb-6 inline-flex items-center gap-2 rounded-full bg-brand-primary-soft px-4 py-1.5 text-sm font-medium text-brand-primary md:mb-8"
         >
           <span aria-hidden="true">🌈</span>
           Acme Productivity App
@@ -103,12 +160,14 @@
 
         <h1
           id="hero-heading"
-          class="mb-6 whitespace-nowrap text-5xl font-extrabold leading-tight tracking-tight text-brand-heading sm:text-6xl lg:text-7xl"
+          class="mb-4 max-w-[18rem] text-[2rem] font-extrabold leading-tight tracking-tight text-brand-heading sm:max-w-none sm:text-5xl md:mb-6 md:max-w-2xl md:text-6xl lg:mb-6 lg:max-w-none lg:whitespace-nowrap lg:text-7xl"
         >
           Boost Your <span class="text-brand-primary">Product</span>ivity
         </h1>
 
-        <p class="mb-10 max-w-xl text-lg text-brand-body sm:text-xl">
+        <p
+          class="mb-8 max-w-xs text-base text-brand-body sm:max-w-xl sm:text-lg md:mb-10 md:text-xl"
+        >
           Streamline your workflow with our all-in-one productivity app.
         </p>
 
@@ -119,30 +178,31 @@
           Start Free Trial
         </button>
       </section>
+      <!--dev2-->
       <section
         id="features"
-        class="feature-section py-16 sm:py-20"
+        class="feature-section py-12 sm:py-16 lg:py-20"
         aria-labelledby="features-heading"
       >
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <h2 id="features-heading" class="sr-only">Product features</h2>
 
           <ul
-            class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-8"
+            class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-7 lg:grid-cols-3 lg:gap-8"
             role="list"
           >
             <!-- Card 1: เนื้อหา — แก้ข้อความที่นี่ -->
             <li>
               <article
-                class="feature-card flex h-full flex-col rounded-3xl bg-feature-surface-1 p-8 sm:p-10"
+                class="feature-card flex h-full flex-col rounded-3xl bg-feature-surface-1 p-6 sm:p-8 lg:p-10"
               >
                 <div
-                  class="feature-card__icon-wrap mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5"
+                  class="feature-card__icon-wrap mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5 sm:mb-6 sm:h-12 sm:w-12"
                   aria-hidden="true"
                 >
                   <!-- Icon: rocket (Heroicons-style) -->
                   <svg
-                    class="h-6 w-6 text-indigo-600"
+                    class="h-5 w-5 text-indigo-600 sm:h-6 sm:w-6"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
@@ -154,10 +214,14 @@
                     />
                   </svg>
                 </div>
-                <h3 class="text-xl font-bold tracking-tight text-slate-900">
+                <h3
+                  class="text-lg font-bold tracking-tight text-slate-900 sm:text-xl"
+                >
                   Streamlined Workflows
                 </h3>
-                <p class="mt-3 text-base leading-relaxed text-slate-600">
+                <p
+                  class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base"
+                >
                   Automate repetitive tasks and focus on high-impact work with
                   our powerful productivity features.
                 </p>
@@ -167,15 +231,15 @@
             <!-- Card 2 -->
             <li>
               <article
-                class="feature-card flex h-full flex-col rounded-3xl bg-feature-surface-2 p-8 sm:p-10"
+                class="feature-card flex h-full flex-col rounded-3xl bg-feature-surface-2 p-6 sm:p-8 lg:p-10"
               >
                 <div
-                  class="feature-card__icon-wrap mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5"
+                  class="feature-card__icon-wrap mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5 sm:mb-6 sm:h-12 sm:w-12"
                   aria-hidden="true"
                 >
                   <!-- Icon: presentation / chart -->
                   <svg
-                    class="h-6 w-6 text-indigo-600"
+                    class="h-5 w-5 text-indigo-600 sm:h-6 sm:w-6"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
@@ -185,10 +249,14 @@
                     />
                   </svg>
                 </div>
-                <h3 class="text-xl font-bold tracking-tight text-slate-900">
+                <h3
+                  class="text-lg font-bold tracking-tight text-slate-900 sm:text-xl"
+                >
                   Blazing Fast Performance
                 </h3>
-                <p class="mt-3 text-base leading-relaxed text-slate-600">
+                <p
+                  class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base"
+                >
                   Experience lightning-fast performance and instant
                   responsiveness with our cutting-edge technology.
                 </p>
@@ -198,15 +266,15 @@
             <!-- Card 3 -->
             <li>
               <article
-                class="feature-card flex h-full flex-col rounded-3xl bg-feature-surface-3 p-8 sm:p-10"
+                class="feature-card flex h-full flex-col rounded-3xl bg-feature-surface-3 p-6 sm:p-8 lg:p-10"
               >
                 <div
-                  class="feature-card__icon-wrap mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5"
+                  class="feature-card__icon-wrap mb-5 flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm ring-1 ring-slate-900/5 sm:mb-6 sm:h-12 sm:w-12"
                   aria-hidden="true"
                 >
                   <!-- Icon: smiley -->
                   <svg
-                    class="h-6 w-6 text-indigo-600"
+                    class="h-5 w-5 text-indigo-600 sm:h-6 sm:w-6"
                     viewBox="0 0 24 24"
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
@@ -216,10 +284,14 @@
                     />
                   </svg>
                 </div>
-                <h3 class="text-xl font-bold tracking-tight text-slate-900">
+                <h3
+                  class="text-lg font-bold tracking-tight text-slate-900 sm:text-xl"
+                >
                   Intuitive Interface
                 </h3>
-                <p class="mt-3 text-base leading-relaxed text-slate-600">
+                <p
+                  class="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base"
+                >
                   Our user-friendly interface makes it easy for anyone to
                   streamline their workflow.
                 </p>
@@ -228,20 +300,25 @@
           </ul>
         </div>
       </section>
-      <section id="contact-section" class="w-full bg-[#F6F6FB] px-6 py-16">
+      <!-- Dev 3 : Contact Section อยู่ข้างล่างสุด -->
+      <section
+        id="contact-section"
+        class="mx-auto w-full max-w-6xl rounded-xl bg-[#F6F6FB] px-4 py-8 sm:px-6 sm:py-12 lg:px-12 lg:py-14"
+      >
         <div
-          class="mx-auto max-w-[900px] rounded-3xl bg-white px-6 py-12 sm:px-12"
+          class="mx-auto w-full max-w-[900px] rounded-2xl bg-white px-4 py-8 sm:rounded-3xl sm:px-8 sm:py-10 lg:px-12 lg:py-12"
         >
-          <!-- Dev 3 featuresSection -->
-          <h2 class="mb-10 text-center text-5xl font-bold text-[#1A1A2C]">
+          <h2
+            class="mb-8 text-center text-3xl font-bold text-[#1A1A2C] sm:mb-10 sm:text-4xl lg:text-5xl"
+          >
             Get in Touch
           </h2>
 
-          <form class="mx-auto max-w-[589px] space-y-5">
+          <form class="mx-auto w-full max-w-[589px] space-y-4 sm:space-y-5">
             <div>
               <label
                 for="contact-name"
-                class="mb-2 block text-sm text-gray-500"
+                class="mb-2 block text-xs text-gray-500 sm:text-sm"
               >
                 Name
               </label>
@@ -250,14 +327,14 @@
                 name="name"
                 type="text"
                 placeholder="John Doe"
-                class="w-full rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+                class="w-full rounded-lg border border-[#E0E0ED] p-3 text-sm outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF] sm:text-base"
               />
             </div>
 
             <div>
               <label
                 for="contact-email"
-                class="mb-2 block text-sm text-gray-500"
+                class="mb-2 block text-xs text-gray-500 sm:text-sm"
               >
                 Email
               </label>
@@ -266,14 +343,14 @@
                 name="email"
                 type="email"
                 placeholder="john@example.com"
-                class="w-full rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+                class="w-full rounded-lg border border-[#E0E0ED] p-3 text-sm outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF] sm:text-base"
               />
             </div>
 
             <div>
               <label
                 for="contact-message"
-                class="mb-2 block text-sm text-gray-500"
+                class="mb-2 block text-xs text-gray-500 sm:text-sm"
               >
                 Message
               </label>
@@ -282,13 +359,13 @@
                 name="message"
                 rows="5"
                 placeholder="Your message..."
-                class="w-full resize-none rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+                class="w-full resize-none rounded-lg border border-[#E0E0ED] p-3 text-sm outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF] sm:text-base"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              class="w-full max-w-[589px] rounded-2xl bg-[#1A1A2C] px-9 py-4 text-white transition hover:bg-[#5F5F76] focus:bg-[#35354D] focus:outline-none focus:ring-4 focus:ring-[#5F5F76]"
+              class="w-full rounded-xl bg-[#1A1A2C] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#5F5F76] focus:bg-[#35354D] focus:outline-none focus:ring-4 focus:ring-[#5F5F76] sm:rounded-2xl sm:px-9 sm:py-4 sm:text-base"
             >
               Submit
             </button>
@@ -296,13 +373,13 @@
 
           <footer
             id="footer-section"
-            class="mt-16 flex flex-col items-center justify-between gap-6 text-sm sm:flex-row"
+            class="mt-10 flex flex-col items-center justify-between gap-5 text-center text-xs sm:mt-14 sm:flex-row sm:text-left sm:text-sm"
           >
             <p class="text-gray-500">Acme productivity app © 2024</p>
 
             <nav aria-label="Footer Navigation">
               <ul
-                class="flex flex-wrap justify-center gap-6 font-semibold text-[#1A1A2C]"
+                class="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 font-semibold text-[#1A1A2C] sm:gap-6"
               >
                 <li>
                   <a
@@ -342,5 +419,37 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (!menuToggle || !mobileMenu) return;
+
+        const closeMenu = () => {
+          mobileMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.classList.remove("text-brand-primary");
+          menuToggle.classList.add("text-brand-heading");
+        };
+
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          const isOpen = !mobileMenu.classList.contains("hidden");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+          menuToggle.classList.toggle("text-brand-primary", isOpen);
+          menuToggle.classList.toggle("text-brand-heading", !isOpen);
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
+        window
+          .matchMedia("(min-width: 1024px)")
+          .addEventListener("change", (event) => {
+            if (event.matches) closeMenu();
+          });
+      })();
+    </script>
   </body>
 </html>
