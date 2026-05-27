@@ -228,20 +228,25 @@
           </ul>
         </div>
       </section>
-      <section id="contact-section" class="w-full bg-[#F6F6FB] px-6 py-16">
+      <!-- Dev 3 : Contact Section อยู่ข้างล่างสุด -->
+      <section
+        id="contact-section"
+        class="mx-auto w-full max-w-6xl rounded-xl bg-[#F6F6FB] px-4 py-8 sm:px-6 sm:py-12 lg:px-12 lg:py-14"
+      >
         <div
-          class="mx-auto max-w-[900px] rounded-3xl bg-white px-6 py-12 sm:px-12"
+          class="mx-auto w-full max-w-[900px] rounded-2xl bg-white px-4 py-8 sm:rounded-3xl sm:px-8 sm:py-10 lg:px-12 lg:py-12"
         >
-          <!-- Dev 3 featuresSection -->
-          <h2 class="mb-10 text-center text-5xl font-bold text-[#1A1A2C]">
+          <h2
+            class="mb-8 text-center text-3xl font-bold text-[#1A1A2C] sm:mb-10 sm:text-4xl lg:text-5xl"
+          >
             Get in Touch
           </h2>
 
-          <form class="mx-auto max-w-[589px] space-y-5">
+          <form class="mx-auto w-full max-w-[589px] space-y-4 sm:space-y-5">
             <div>
               <label
                 for="contact-name"
-                class="mb-2 block text-sm text-gray-500"
+                class="mb-2 block text-xs text-gray-500 sm:text-sm"
               >
                 Name
               </label>
@@ -250,14 +255,14 @@
                 name="name"
                 type="text"
                 placeholder="John Doe"
-                class="w-full rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+                class="w-full rounded-lg border border-[#E0E0ED] p-3 text-sm outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF] sm:text-base"
               />
             </div>
 
             <div>
               <label
                 for="contact-email"
-                class="mb-2 block text-sm text-gray-500"
+                class="mb-2 block text-xs text-gray-500 sm:text-sm"
               >
                 Email
               </label>
@@ -266,14 +271,14 @@
                 name="email"
                 type="email"
                 placeholder="john@example.com"
-                class="w-full rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+                class="w-full rounded-lg border border-[#E0E0ED] p-3 text-sm outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF] sm:text-base"
               />
             </div>
 
             <div>
               <label
                 for="contact-message"
-                class="mb-2 block text-sm text-gray-500"
+                class="mb-2 block text-xs text-gray-500 sm:text-sm"
               >
                 Message
               </label>
@@ -282,13 +287,13 @@
                 name="message"
                 rows="5"
                 placeholder="Your message..."
-                class="w-full resize-none rounded-lg border border-[#E0E0ED] p-3 outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF]"
+                class="w-full resize-none rounded-lg border border-[#E0E0ED] p-3 text-sm outline-none transition hover:border-[#B5A9FF] focus:border-[#5E44FF] sm:text-base"
               ></textarea>
             </div>
 
             <button
               type="submit"
-              class="w-full max-w-[589px] rounded-2xl bg-[#1A1A2C] px-9 py-4 text-white transition hover:bg-[#5F5F76] focus:bg-[#35354D] focus:outline-none focus:ring-4 focus:ring-[#5F5F76]"
+              class="w-full rounded-xl bg-[#1A1A2C] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#5F5F76] focus:bg-[#35354D] focus:outline-none focus:ring-4 focus:ring-[#5F5F76] sm:rounded-2xl sm:px-9 sm:py-4 sm:text-base"
             >
               Submit
             </button>
@@ -296,13 +301,13 @@
 
           <footer
             id="footer-section"
-            class="mt-16 flex flex-col items-center justify-between gap-6 text-sm sm:flex-row"
+            class="mt-10 flex flex-col items-center justify-between gap-5 text-center text-xs sm:mt-14 sm:flex-row sm:text-left sm:text-sm"
           >
             <p class="text-gray-500">Acme productivity app © 2024</p>
 
             <nav aria-label="Footer Navigation">
               <ul
-                class="flex flex-wrap justify-center gap-6 font-semibold text-[#1A1A2C]"
+                class="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 font-semibold text-[#1A1A2C] sm:gap-6"
               >
                 <li>
                   <a

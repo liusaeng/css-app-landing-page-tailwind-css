@@ -3,8 +3,10 @@ module.exports = {
   content: ["./index.html"],
   theme: {
     extend: {
-      // ใช้ namespace `brand` — dev แต่คนเพิ่ม key ใหม่ภายใต้ brand เท่านั้น ลด merge conflict
       colors: {
+        "feature-surface-1": "#eff6ff",
+        "feature-surface-2": "#eef2ff",
+        "feature-surface-3": "#faf5ff",
         brand: {
           bg: "#f8fafc",
           surface: "#ffffff",
