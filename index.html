@@ -38,10 +38,12 @@
     </script>
   </head>
   <body class="min-h-screen bg-[#F6F6FB] font-sans antialiased">
-    <main class="mx-auto flex min-h-screen max-w-6xl flex-col px-6 pb-16 pt-8">
-      <header class="mb-20">
+    <main
+      class="mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-16 pt-6 sm:px-6 sm:pt-8"
+    >
+      <header class="mb-12 md:mb-16 lg:mb-20">
         <nav
-          class="flex items-center justify-between rounded-full bg-brand-surface px-8 py-4 shadow-[0_4px_24px_rgba(15,23,42,0.06)]"
+          class="flex items-center justify-between rounded-full bg-brand-surface px-6 py-4 shadow-[0_4px_24px_rgba(15,23,42,0.06)] md:px-8"
           aria-label="Main navigation"
         >
           <a
@@ -55,7 +57,9 @@
             ></span>
           </a>
 
-          <ul class="flex items-center gap-10 text-base font-medium">
+          <ul
+            class="hidden items-center gap-10 text-base font-medium lg:flex"
+          >
             <li>
               <a
                 href="#"
@@ -87,15 +91,68 @@
               >
             </li>
           </ul>
+
+          <button
+            type="button"
+            id="menu-toggle"
+            class="inline-flex items-center justify-center rounded-lg p-1 text-brand-heading transition-colors hover:text-[#5E44FF] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 lg:hidden"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            aria-label="Toggle navigation menu"
+          >
+            <svg
+              class="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              aria-hidden="true"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
         </nav>
+
+        <div
+          id="mobile-menu"
+          class="mt-4 hidden rounded-3xl bg-brand-surface px-6 py-10 shadow-[0_4px_24px_rgba(15,23,42,0.06)] lg:hidden"
+        >
+          <ul class="flex flex-col items-center gap-8 text-lg font-medium">
+            <li>
+              <a
+                href="#"
+                class="border-b-2 border-brand-primary pb-0.5 text-brand-primary"
+                aria-current="page"
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="#" class="text-brand-heading hover:text-[#5E44FF]"
+                >Features</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-brand-heading hover:text-[#5E44FF]"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-brand-heading hover:text-[#5E44FF]"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
       </header>
 
       <section
-        class="flex flex-1 flex-col items-center text-center"
+        class="flex flex-1 flex-col items-center px-2 text-center md:px-4"
         aria-labelledby="hero-heading"
       >
         <p
-          class="mb-8 inline-flex items-center gap-2 rounded-full bg-brand-primary-soft px-4 py-1.5 text-sm font-medium text-brand-primary"
+          class="mb-6 inline-flex items-center gap-2 rounded-full bg-brand-primary-soft px-4 py-1.5 text-sm font-medium text-brand-primary md:mb-8"
         >
           <span aria-hidden="true">🌈</span>
           Acme Productivity App
@@ -103,12 +160,14 @@
 
         <h1
           id="hero-heading"
-          class="mb-6 whitespace-nowrap text-5xl font-extrabold leading-tight tracking-tight text-brand-heading sm:text-6xl lg:text-7xl"
+          class="mb-4 max-w-[18rem] text-[2rem] font-extrabold leading-tight tracking-tight text-brand-heading sm:max-w-none sm:text-5xl md:mb-6 md:max-w-2xl md:text-6xl lg:mb-6 lg:max-w-none lg:whitespace-nowrap lg:text-7xl"
         >
           Boost Your <span class="text-brand-primary">Product</span>ivity
         </h1>
 
-        <p class="mb-10 max-w-xl text-lg text-brand-body sm:text-xl">
+        <p
+          class="mb-8 max-w-xs text-base text-brand-body sm:max-w-xl sm:text-lg md:mb-10 md:text-xl"
+        >
           Streamline your workflow with our all-in-one productivity app.
         </p>
 
@@ -342,5 +401,37 @@
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+        if (!menuToggle || !mobileMenu) return;
+
+        const closeMenu = () => {
+          mobileMenu.classList.add("hidden");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.classList.remove("text-brand-primary");
+          menuToggle.classList.add("text-brand-heading");
+        };
+
+        menuToggle.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+          const isOpen = !mobileMenu.classList.contains("hidden");
+          menuToggle.setAttribute("aria-expanded", String(isOpen));
+          menuToggle.classList.toggle("text-brand-primary", isOpen);
+          menuToggle.classList.toggle("text-brand-heading", !isOpen);
+        });
+
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMenu);
+        });
+
+        window
+          .matchMedia("(min-width: 1024px)")
+          .addEventListener("change", (event) => {
+            if (event.matches) closeMenu();
+          });
+      })();
+    </script>
   </body>
 </html>
